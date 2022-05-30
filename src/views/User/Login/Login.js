@@ -192,6 +192,7 @@ class Login extends Component {
                       clientId="1000261381053-acnpjvmhm485p7aal87iicf70bvdm04a.apps.googleusercontent.com"
                       buttonText="LOGIN WITH GOOGLE"
                       onSuccess={this.responseGoogle}
+                      cookiePolicy={"single_host_origin"}
                       className=" btn btn-google"
                       style={{ justifyContent: "center" }}
                     />
