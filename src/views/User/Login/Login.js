@@ -65,6 +65,7 @@ class Login extends Component {
   };
 
   responseGoogle = async (response) => {
+    console.log(response);
     if (response) {
       let userInfor = response.profileObj;
       let res = await findUserByEmail(userInfor.email);
