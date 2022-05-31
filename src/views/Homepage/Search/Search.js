@@ -13,7 +13,7 @@ class Search extends Component {
     };
   }
   componentDidMount() {}
-  handleViewDetailProduct = (product) => {
+  handleViewDetailProduct = product => {
     this.props.history.push(`/detail-product/${product._id}`);
   };
   render() {
@@ -69,14 +69,14 @@ class Search extends Component {
                           <i className="fa fa-star star"></i>
                         </div>
 
-                        <div className="text-muted mb-3">34 reviews</div>
+                        <div className="text-muted mb-3">34 đánh giá</div>
 
                         <button
                           type="button"
                           className="btn bg-cart"
                           onClick={() => this.handleAddToCart(item)}
                         >
-                          <i className="fa fa-cart-plus mr-2"></i> Add to cart
+                          <i className="fa fa-cart-plus mr-2"></i> Thêm vào giỏ
                         </button>
                       </div>
                     </div>
@@ -95,13 +95,13 @@ class Search extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     allProduct: state.products.products,
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {};
 };
 

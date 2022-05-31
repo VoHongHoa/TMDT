@@ -41,15 +41,15 @@ class Homeheader extends Component {
   returnToHome = () => {
     this.props.history.push("/");
   };
-  handleOpenEditUser = (id) => {
+  handleOpenEditUser = id => {
     this.props.history.push(`/user/${id}`);
   };
-  handleOnChangeInput = (event) => {
+  handleOnChangeInput = event => {
     this.setState({
       keyword: event.target.value,
     });
   };
-  getProductSearch = (keyword) => {
+  getProductSearch = keyword => {
     this.props.searchProduct(keyword);
     this.props.history.push("/search");
   };
@@ -86,11 +86,11 @@ class Homeheader extends Component {
                 activeClassName="active"
                 exact
               >
-                Home
+                Trang chủ
               </NavLink>
-              <a href="#" className="nav-item nav-link">
+              {/* <a href="#" className="nav-item nav-link">
                 About
-              </a>
+              </a> */}
               <div className="nav-item dropdown">
                 <a
                   href="#"
@@ -126,11 +126,11 @@ class Homeheader extends Component {
                   </NavLink>
                 </div>
               </div>
-              <a href="#" className="nav-item nav-link">
+              {/* <a href="#" className="nav-item nav-link">
                 Blog
-              </a>
+              </a> */}
               <a href="#" className="nav-item nav-link">
-                Contact
+                Liên hệ
               </a>
             </div>
             <form className="navbar-form form-inline">
@@ -140,7 +140,7 @@ class Homeheader extends Component {
                   id="search"
                   className="form-control"
                   placeholder="Search by Name"
-                  onChange={(event) => this.handleOnChangeInput(event)}
+                  onChange={event => this.handleOnChangeInput(event)}
                 />
                 <span className="input-group-addon">
                   <i
@@ -191,7 +191,7 @@ class Homeheader extends Component {
                       activeClassName="active"
                       exact
                     >
-                      <i className="fa fa-user-o"></i> Profile
+                      <i className="fa fa-user-o"></i> Hồ sơ người dùng
                     </NavLink>
 
                     <a
@@ -207,7 +207,7 @@ class Homeheader extends Component {
                       activeClassName="active"
                       exact
                     >
-                      <i className="fas fa-shopping-cart"></i> Cart
+                      <i className="fas fa-shopping-cart"></i> Giỏ hàng
                     </NavLink>
 
                     {this.props.userInfor &&
@@ -220,7 +220,7 @@ class Homeheader extends Component {
                           activeClassName="active"
                           exact
                         >
-                          <i className="fas fa-tools"></i>Go Admin
+                          <i className="fas fa-tools"></i>Chuyển qua Admin
                         </NavLink>
                       )}
                     <div className="dropdown-divider"></div>
@@ -229,7 +229,7 @@ class Homeheader extends Component {
                       onClick={() => this.handleLogout()}
                       style={{ cursor: "pointer" }}
                     >
-                      <i className="material-icons">&#xE8AC;</i> Logout
+                      <i className="material-icons">&#xE8AC;</i> Đăng xuất
                     </p>
                   </div>
                 </div>
@@ -255,17 +255,17 @@ class Homeheader extends Component {
     );
   }
 }
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     isLogin: state.user.isLogin,
     userInfor: state.user.userInfor,
     numOfItemInCart: state.cart.cart.length,
   };
 };
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
     logOutSuccess: () => dispatch(logOutSuccess()),
-    searchProduct: (keyword) => dispatch(searchProduct(keyword)),
+    searchProduct: keyword => dispatch(searchProduct(keyword)),
   };
 };
 

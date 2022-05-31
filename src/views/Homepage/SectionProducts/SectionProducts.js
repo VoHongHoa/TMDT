@@ -20,10 +20,10 @@ class SectionProducts extends Component {
       });
     }
   }
-  handleViewDetailProduct = (product) => {
+  handleViewDetailProduct = product => {
     this.props.history.push(`/detail-product/${product._id}`);
   };
-  handleAddToCart = (item) => {
+  handleAddToCart = item => {
     this.props.addToCart(item);
   };
 
@@ -64,7 +64,7 @@ class SectionProducts extends Component {
                                 className="text-default mb-2"
                                 data-abc="true"
                               >
-                                {item.desc}
+                                {/* {item.desc} */}
                               </a>
                             </h6>
 
@@ -84,14 +84,15 @@ class SectionProducts extends Component {
                             <i className="fa fa-star star"></i>
                           </div>
 
-                          <div className="text-muted mb-3">34 reviews</div>
+                          <div className="text-muted mb-3">34 đánh giá</div>
 
                           <button
                             type="button"
                             className="btn bg-cart"
                             onClick={() => this.handleAddToCart(item)}
                           >
-                            <i className="fa fa-cart-plus mr-2"></i> Add to cart
+                            <i className="fa fa-cart-plus mr-2"></i> Thêm vào
+                            giỏ
                           </button>
                         </div>
                       </div>
@@ -105,12 +106,12 @@ class SectionProducts extends Component {
     );
   }
 }
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {};
 };
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    addToCart: (item) => dispatch(addToCart(item)),
+    addToCart: item => dispatch(addToCart(item)),
   };
 };
 

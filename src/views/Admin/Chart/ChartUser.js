@@ -25,7 +25,7 @@ class ChartUser extends Component {
       this.buiDataChart(this.state.chartData);
     }
   }
-  buiDataChart = (chartData) => {
+  buiDataChart = chartData => {
     let allMonth = [];
     let numOfUserByMonth = [];
     if (chartData && chartData.length > 0) {
@@ -79,11 +79,11 @@ class ChartUser extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {};
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {};
 };
 

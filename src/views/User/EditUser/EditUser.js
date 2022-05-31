@@ -78,17 +78,17 @@ class EditUser extends Component {
               <div className="col-md-5 border-right">
                 <div className="p-3 py-5">
                   <div className="d-flex justify-content-between align-items-center mb-3">
-                    <h4 className="text-right">Profile Settings</h4>
+                    <h4 className="text-right">Hồ sơ người dùng</h4>
                   </div>
                   <div className="row mt-2">
                     <div className="col-md-12">
-                      <label className="labels">FullName</label>
+                      <label className="labels">Họ Tên</label>
                       <input
                         type="text"
                         className="form-control"
                         placeholder="first name"
                         value={this.state.fullname}
-                        onChange={(event) => {
+                        onChange={event => {
                           this.handleOnchangeInput(event, "fullname");
                         }}
                       />
@@ -96,32 +96,32 @@ class EditUser extends Component {
                   </div>
                   <div className="row mt-3">
                     <div className="col-md-12">
-                      <label className="labels">Mobile Number</label>
+                      <label className="labels">Số điện thoại</label>
                       <input
                         type="text"
                         className="form-control"
                         placeholder="enter phone number"
                         value={this.state.phoneNumber}
-                        onChange={(event) => {
+                        onChange={event => {
                           this.handleOnchangeInput(event, "phoneNumber");
                         }}
                       />
                     </div>
                     <div className="col-md-12">
-                      <label className="labels">Address</label>
+                      <label className="labels">Địa chỉ</label>
                       <input
                         type="text"
                         className="form-control"
                         placeholder="enter address line 1"
                         value={this.state.address}
-                        onChange={(event) => {
+                        onChange={event => {
                           this.handleOnchangeInput(event, "address");
                         }}
                       />
                     </div>
 
                     <div className="col-md-12">
-                      <label className="labels">Area</label>
+                      <label className="labels">Khu vực</label>
                       <input
                         type="text"
                         className="form-control"
@@ -136,7 +136,7 @@ class EditUser extends Component {
                         className="form-control"
                         placeholder="enter email id"
                         value={this.state.email}
-                        onChange={(event) => {
+                        onChange={event => {
                           this.handleOnchangeInput(event, "email");
                         }}
                       />
@@ -193,13 +193,13 @@ class EditUser extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return { isLogin: state.user.isLogin, userInfor: state.user.userInfor };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    editUser: (data) => dispatch(editUser(data)),
+    editUser: data => dispatch(editUser(data)),
     logOutSuccess: () => dispatch(logOutSuccess()),
   };
 };

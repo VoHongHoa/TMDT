@@ -23,12 +23,12 @@ class Login extends Component {
   }
   componentDidMount() {}
 
-  handleOnChangeUsername = (event) => {
+  handleOnChangeUsername = event => {
     this.setState({
       username: event.target.value,
     });
   };
-  handleOnChangePassword = (event) => {
+  handleOnChangePassword = event => {
     this.setState({
       password: event.target.value,
     });
@@ -38,7 +38,7 @@ class Login extends Component {
       isShowpassword: !this.state.isShowpassword,
     });
   };
-  handelKeyPressLogin = (event) => {
+  handelKeyPressLogin = event => {
     if (event.key === "Enter") {
       this.handleLoginSubmit();
     }
@@ -64,7 +64,7 @@ class Login extends Component {
     this.props.history.push("/forgotpassword");
   };
 
-  responseGoogle = async (response) => {
+  responseGoogle = async response => {
     console.log(response);
     if (response) {
       let userInfor = response.profileObj;
@@ -97,7 +97,7 @@ class Login extends Component {
       toast.error("Đăng nhập không thành công!!");
     }
   };
-  responseFacebook = (response) => {
+  responseFacebook = response => {
     console.log(response);
   };
   render() {
@@ -109,7 +109,7 @@ class Login extends Component {
               <div className="card border-0 shadow rounded-3 my-5">
                 <div className="card-body p-4 p-sm-5">
                   <h5 className="card-title text-center mb-5 fw-light fs-5">
-                    Sign In
+                    Đăng nhập
                   </h5>
 
                   <div className="form-floating mb-3">
@@ -119,9 +119,9 @@ class Login extends Component {
                       id="floatingInput"
                       placeholder="username"
                       value={this.state.username}
-                      onChange={(event) => this.handleOnChangeUsername(event)}
+                      onChange={event => this.handleOnChangeUsername(event)}
                     />
-                    <label htmlFor="floatingInput">Username</label>
+                    <label htmlFor="floatingInput">Tên người dùng</label>
                   </div>
                   <div className="form-floating mb-3">
                     <input
@@ -130,9 +130,9 @@ class Login extends Component {
                       id="floatingPassword"
                       placeholder="Password"
                       value={this.state.password}
-                      onChange={(event) => this.handleOnChangePassword(event)}
+                      onChange={event => this.handleOnChangePassword(event)}
                     />
-                    <label htmlFor="floatingPassword">Password</label>
+                    <label htmlFor="floatingPassword">Mật khẩu</label>
                   </div>
 
                   <div className="form-check mb-3">
@@ -146,7 +146,7 @@ class Login extends Component {
                       className="form-check-label"
                       htmlFor="rememberPasswordCheck"
                     >
-                      Remember password
+                      Ghi nhớ mật khẩu
                     </label>
                   </div>
 
@@ -155,7 +155,7 @@ class Login extends Component {
                       className="btn btn-primary btn-login text-uppercase fw-bold"
                       onClick={() => this.handleLoginSubmit()}
                     >
-                      Sign in
+                      Đăng nhập
                     </button>
                   </div>
                   <div
@@ -212,15 +212,15 @@ class Login extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     isLogin: state.user.isLogin,
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    handleLogin: (data) => dispatch(handleLogin(data)),
+    handleLogin: data => dispatch(handleLogin(data)),
     logOutSuccess: () => dispatch(logOutSuccess()),
   };
 };

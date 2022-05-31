@@ -58,7 +58,7 @@ class ModalRegister extends Component {
     }
     return isValid;
   };
-  handleOnchangeImage = async (event) => {
+  handleOnchangeImage = async event => {
     let filedata = event.target.files;
     let file = filedata[0];
     //console.log(file);
@@ -67,12 +67,12 @@ class ModalRegister extends Component {
       const uploadTask = uploadBytesResumable(storageRef, file);
       uploadTask.on(
         "state_changed",
-        (snapshot) => {},
-        (err) => {
+        snapshot => {},
+        err => {
           console.log(err);
         },
         () => {
-          getDownloadURL(uploadTask.snapshot.ref).then((url) => {
+          getDownloadURL(uploadTask.snapshot.ref).then(url => {
             console.log("check url", url);
             this.setState({
               img: url,
@@ -136,24 +136,24 @@ class ModalRegister extends Component {
         <ModalBody>
           <div className="modalBody-user-container row">
             <div className="form-group mt-2 col-6">
-              <label>Username</label>
+              <label>Tên người dùng</label>
               <input
                 type="text"
                 className="form-control"
                 placeholder="Enter your username"
-                onChange={(event) => {
+                onChange={event => {
                   this.handleOnchangeInput(event, "username");
                 }}
                 value={this.state.username}
               />
             </div>
             <div className="form-group mt-2 col-6">
-              <label>Password</label>
+              <label>Mật khẩu</label>
               <input
                 type="password"
                 className="form-control"
                 placeholder="Enter password"
-                onChange={(event) => {
+                onChange={event => {
                   this.handleOnchangeInput(event, "password");
                 }}
                 value={this.state.password}
@@ -166,19 +166,19 @@ class ModalRegister extends Component {
                 type="email"
                 className="form-control"
                 placeholder="Enter email"
-                onChange={(event) => {
+                onChange={event => {
                   this.handleOnchangeInput(event, "email");
                 }}
                 value={this.state.email}
               />
             </div>
             <div className="form-group mt-2 col-6">
-              <label>Fullname</label>
+              <label>Họ và Tên</label>
               <input
                 type="text"
                 className="form-control"
                 placeholder="Enter your fullname"
-                onChange={(event) => {
+                onChange={event => {
                   this.handleOnchangeInput(event, "fullname");
                 }}
                 value={this.state.fullname}
@@ -190,7 +190,7 @@ class ModalRegister extends Component {
                 type="text"
                 className="form-control"
                 placeholder="Enter your address"
-                onChange={(event) => {
+                onChange={event => {
                   this.handleOnchangeInput(event, "address");
                 }}
                 value={this.state.address}
@@ -202,7 +202,7 @@ class ModalRegister extends Component {
                 type="text"
                 className="form-control"
                 placeholder="Enter your Phone Number"
-                onChange={(event) => {
+                onChange={event => {
                   this.handleOnchangeInput(event, "phoneNumber");
                 }}
                 value={this.state.phoneNumber}
@@ -221,7 +221,7 @@ class ModalRegister extends Component {
               <input
                 type="file"
                 className="form-control"
-                onChange={(event) => {
+                onChange={event => {
                   this.handleOnchangeImage(event);
                 }}
               />
@@ -265,11 +265,11 @@ class ModalRegister extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {};
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {};
 };
 

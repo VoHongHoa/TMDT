@@ -83,7 +83,7 @@ class HomePage extends Component {
                   className="carousel-control-prev-icon"
                   aria-hidden="true"
                 ></span>
-                <span className="sr-only">Previous</span>
+                <span className="sr-only">Trước</span>
               </a>
               <a
                 className="carousel-control-next"
@@ -95,7 +95,7 @@ class HomePage extends Component {
                   className="carousel-control-next-icon"
                   aria-hidden="true"
                 ></span>
-                <span className="sr-only">Next</span>
+                <span className="sr-only">Tiếp</span>
               </a>
             </div>
           </div>
@@ -110,13 +110,13 @@ class HomePage extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     isLogin: state.user.isLogin,
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {};
 };
 

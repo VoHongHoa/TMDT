@@ -72,7 +72,7 @@ class ModalEditProduct extends Component {
       ...copyState,
     });
   };
-  handleOnchangeImage = async (event) => {
+  handleOnchangeImage = async event => {
     let filedata = event.target.files;
     let file = filedata[0];
     //console.log(file);
@@ -81,12 +81,12 @@ class ModalEditProduct extends Component {
       const uploadTask = uploadBytesResumable(storageRef, file);
       uploadTask.on(
         "state_changed",
-        (snapshot) => {},
-        (err) => {
+        snapshot => {},
+        err => {
           console.log(err);
         },
         () => {
-          getDownloadURL(uploadTask.snapshot.ref).then((url) => {
+          getDownloadURL(uploadTask.snapshot.ref).then(url => {
             console.log("check url", url);
             this.setState({
               img: url,
@@ -125,7 +125,7 @@ class ModalEditProduct extends Component {
             this.toggle();
           }}
         >
-          Edit sản phẩm
+          Chỉnh sửa sản phẩm
         </ModalHeader>
         <ModalBody>
           <div className="modalBody-product-container row">
@@ -135,7 +135,7 @@ class ModalEditProduct extends Component {
                 type="text"
                 className="form-control"
                 placeholder="Enter product name"
-                onChange={(event) => {
+                onChange={event => {
                   this.handleOnchangeInput(event, "tittle");
                 }}
                 value={this.state.tittle}
@@ -147,7 +147,7 @@ class ModalEditProduct extends Component {
                 type="text"
                 className="form-control"
                 placeholder="Enter product descriptions"
-                onChange={(event) => {
+                onChange={event => {
                   this.handleOnchangeInput(event, "desc");
                 }}
                 value={this.state.desc}
@@ -196,7 +196,7 @@ class ModalEditProduct extends Component {
                 type="text"
                 className="form-control"
                 placeholder="Enter product price"
-                onChange={(event) => {
+                onChange={event => {
                   this.handleOnchangeInput(event, "price");
                 }}
                 value={this.state.price}
@@ -207,7 +207,7 @@ class ModalEditProduct extends Component {
               <input
                 type="file"
                 className="form-control "
-                onChange={(event) => {
+                onChange={event => {
                   this.handleOnchangeImage(event);
                 }}
               />
@@ -250,11 +250,11 @@ class ModalEditProduct extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {};
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {};
 };
 

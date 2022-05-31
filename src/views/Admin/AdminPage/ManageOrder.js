@@ -19,13 +19,13 @@ class ManageOrder extends Component {
     }
   }
 
-  handleOpenModalEdit = (item) => {
+  handleOpenModalEdit = item => {
     this.setState({
       isOpenModal: true,
       currentUserEdit: item,
     });
   };
-  handleOnchangeInput = (event) => {
+  handleOnchangeInput = event => {
     this.setState({
       name: event.target.value,
     });
@@ -35,7 +35,7 @@ class ManageOrder extends Component {
       isOpenModal: false,
     });
   };
-  handleDeleteOrder = async (item) => {
+  handleDeleteOrder = async item => {
     try {
       let res = await deleteOrder(item);
       if (res) {
@@ -75,14 +75,14 @@ class ManageOrder extends Component {
               <tr>
                 <th rowSpan={2}>STT</th>
                 <th rowSpan={2}>Họ và tên</th>
-                <th colSpan={2}>Products</th>
-                <th rowSpan={2}>Address</th>
-                <th rowSpan={2}>Status</th>
-                <th rowSpan={2}>Action</th>
+                <th colSpan={2}>Sản phẩm</th>
+                <th rowSpan={2}>Địa chỉ</th>
+                <th rowSpan={2}>Trạng thái</th>
+                <th rowSpan={2}>Thực hiện</th>
               </tr>
               <tr>
-                <th>Title</th>
-                <th>Quantity</th>
+                <th>Tên</th>
+                <th>Số lượng</th>
               </tr>
             </thead>
             <tbody>
@@ -129,13 +129,13 @@ class ManageOrder extends Component {
     );
   }
 }
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     isLogin: state.isLogin,
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {};
 };
 

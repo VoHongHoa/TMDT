@@ -22,7 +22,7 @@ class RecomProduct extends Component {
     }
   }
   componentDidUpdate(preProps) {}
-  handleAddToCart = (item) => {
+  handleAddToCart = item => {
     this.props.addToCart(item);
   };
   render() {
@@ -58,7 +58,7 @@ class RecomProduct extends Component {
                           <p>{item.desc}</p>
                           <p>
                             <button onClick={() => this.handleAddToCart(item)}>
-                              Add to Cart
+                              Thêm vào giỏ
                             </button>
                           </p>
                         </div>
@@ -73,12 +73,12 @@ class RecomProduct extends Component {
     );
   }
 }
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {};
 };
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    addToCart: (item) => dispatch(addToCart(item)),
+    addToCart: item => dispatch(addToCart(item)),
   };
 };
 

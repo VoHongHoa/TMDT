@@ -51,7 +51,7 @@ class ProductManage extends Component {
       isOpenModalEdit: false,
     });
   };
-  doAddNewProduct = async (data) => {
+  doAddNewProduct = async data => {
     try {
       let res = await addNewProduct(data);
       if (res && res.errCode === 1) {
@@ -67,7 +67,7 @@ class ProductManage extends Component {
       console.log(e);
     }
   };
-  handleDeleteProduct = async (product) => {
+  handleDeleteProduct = async product => {
     try {
       if (product && product._id) {
         let res = await deleteProduct(product._id);
@@ -83,7 +83,7 @@ class ProductManage extends Component {
       console.log(e);
     }
   };
-  handleEditProduct = async (product) => {
+  handleEditProduct = async product => {
     this.setState({
       isOpenModalEdit: true,
       currentProduct: product,
@@ -103,12 +103,12 @@ class ProductManage extends Component {
       console.log(e);
     }
   };
-  handleOnchangeInput = (event) => {
+  handleOnchangeInput = event => {
     this.setState({
       keywordFind: event.target.value,
     });
   };
-  handleSearchProduct = async (keyword) => {
+  handleSearchProduct = async keyword => {
     try {
       let res = await findProduct(keyword);
       // console.log("check res:", res);
@@ -133,7 +133,7 @@ class ProductManage extends Component {
             <input
               className="form-control"
               placeholder="Tìm kiếm sản phẩm...."
-              onChange={(event) => this.handleOnchangeInput(event)}
+              onChange={event => this.handleOnchangeInput(event)}
             />
             <button
               type="submit"
@@ -157,10 +157,10 @@ class ProductManage extends Component {
             <thead>
               <tr>
                 <th>STT</th>
-                <th>Title</th>
+                <th>Tên</th>
                 <th>Giá</th>
                 <th>Ảnh</th>
-                <th>Action</th>
+                <th>Thực hiện</th>
               </tr>
             </thead>
             <tbody>
@@ -217,13 +217,13 @@ class ProductManage extends Component {
     );
   }
 }
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     isLogin: state.user.isLogin,
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {};
 };
 

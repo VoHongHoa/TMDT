@@ -35,7 +35,7 @@ class UserManage extends Component {
     }
     //console.log("check respone", respone);
   }
-  handleDeleteUser = async (userId) => {
+  handleDeleteUser = async userId => {
     let res = await deleteuser(userId);
     if (res && res.success === true) {
       toast.success("Xoá user thành công");
@@ -50,7 +50,7 @@ class UserManage extends Component {
       toast.error("Xóa không thành công");
     }
   };
-  doEditUser = async (data) => {
+  doEditUser = async data => {
     try {
       let res = await editUserFromAdmin(data);
       if (res && res.success === true) {
@@ -72,13 +72,13 @@ class UserManage extends Component {
       console.log(error);
     }
   };
-  handleOpenModalEdit = (item) => {
+  handleOpenModalEdit = item => {
     this.setState({
       isOpenModal: true,
       currentUserEdit: item,
     });
   };
-  handleOnchangeInput = (event) => {
+  handleOnchangeInput = event => {
     this.setState({
       keyword: event.target.value,
     });
@@ -88,7 +88,7 @@ class UserManage extends Component {
       isOpenModal: false,
     });
   };
-  handleSearchUser = async (keyWord) => {
+  handleSearchUser = async keyWord => {
     try {
       let res = await findUser(keyWord);
       //console.log("check res:", res);
@@ -105,7 +105,7 @@ class UserManage extends Component {
       console.log(e);
     }
   };
-  handleChangePage = async (currentPage) => {
+  handleChangePage = async currentPage => {
     this.setState({
       currentPage: currentPage,
     });
@@ -159,7 +159,7 @@ class UserManage extends Component {
             <input
               className="form-control"
               placeholder="Tìm kiếm người dùng theo tên, địa chỉ, quyền, ..."
-              onChange={(event) => this.handleOnchangeInput(event)}
+              onChange={event => this.handleOnchangeInput(event)}
               //onChange ={()=>  this.handleSearchUser(this.state.name)}
             />
             <button
@@ -179,9 +179,9 @@ class UserManage extends Component {
                 <th>STT</th>
                 <th>Họ và tên</th>
                 <th>Email</th>
-                <th>Address</th>
-                <th>Role</th>
-                <th>Action</th>
+                <th>Địa chỉ</th>
+                <th>Quyền</th>
+                <th>Thực hiện</th>
               </tr>
             </thead>
             <tbody>
@@ -250,13 +250,13 @@ class UserManage extends Component {
     );
   }
 }
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     isLogin: state.isLogin,
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {};
 };
 

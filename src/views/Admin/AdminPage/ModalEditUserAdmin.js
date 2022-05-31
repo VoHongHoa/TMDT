@@ -41,7 +41,7 @@ class ModalEditUserAdmin extends Component {
       ...copyState,
     });
   };
-  handleOnchangeSelect = (role) => {
+  handleOnchangeSelect = role => {
     this.setState({
       role: role,
     });
@@ -86,19 +86,19 @@ class ModalEditUserAdmin extends Component {
                 type="email"
                 className="form-control"
                 placeholder="Enter email"
-                onChange={(event) => {
+                onChange={event => {
                   this.handleOnchangeInput(event, "email");
                 }}
                 value={this.state.email}
               />
             </div>
             <div className="form-group mt-2 col-6">
-              <label>Fullname</label>
+              <label>Họ và Tên</label>
               <input
                 type="text"
                 className="form-control"
                 placeholder="Enter your fullname"
-                onChange={(event) => {
+                onChange={event => {
                   this.handleOnchangeInput(event, "fullname");
                 }}
                 value={this.state.fullname}
@@ -110,7 +110,7 @@ class ModalEditUserAdmin extends Component {
                 type="text"
                 className="form-control"
                 placeholder="Enter your address"
-                onChange={(event) => {
+                onChange={event => {
                   this.handleOnchangeInput(event, "address");
                 }}
                 value={this.state.address}
@@ -122,14 +122,14 @@ class ModalEditUserAdmin extends Component {
                 type="text"
                 className="form-control"
                 placeholder="Enter your Phone Number"
-                onChange={(event) => {
+                onChange={event => {
                   this.handleOnchangeInput(event, "phoneNumber");
                 }}
                 value={this.state.phoneNumber}
               />
             </div>
             <div className="form-group col-6 mt-2">
-              <label>Role</label>
+              <label>Quyền</label>
               <Select
                 onChange={this.handleOnchangeSelect}
                 options={options}
@@ -161,11 +161,11 @@ class ModalEditUserAdmin extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {};
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {};
 };
 

@@ -39,10 +39,10 @@ class DetailProduct extends Component {
       });
     }
   }
-  handleAddToCart = (product) => {
+  handleAddToCart = product => {
     this.props.addToCart(product);
   };
-  getAllReviews = async (productId) => {
+  getAllReviews = async productId => {
     try {
       let res = await getAllReviewProduct(productId);
       this.setState({
@@ -52,7 +52,7 @@ class DetailProduct extends Component {
       console.log(e);
     }
   };
-  handleOnchangeInput = (event) => {
+  handleOnchangeInput = event => {
     this.setState({
       newReview: event.target.value,
     });
@@ -98,7 +98,7 @@ class DetailProduct extends Component {
       isShowComment: !this.state.isShowComment,
     });
   };
-  handleDeleteReview = async (reviewId) => {
+  handleDeleteReview = async reviewId => {
     try {
       let res = await deleteReview(reviewId);
       //console.log(res);
@@ -111,7 +111,7 @@ class DetailProduct extends Component {
       toast.error("Lỗi server");
     }
   };
-  handleOpenModalEditReview = async (item) => {
+  handleOpenModalEditReview = async item => {
     this.setState({
       curentReview: item,
       isOpenModal: true,
@@ -122,7 +122,7 @@ class DetailProduct extends Component {
       isOpenModal: false,
     });
   };
-  doEditReview = async (data) => {
+  doEditReview = async data => {
     try {
       let res = await editReview(data);
       //console.log(res);
@@ -152,7 +152,7 @@ class DetailProduct extends Component {
           </section>
           <section id="sidebar">
             <p>
-              Home | SamSum | <b>{product.title}</b>
+              Trang chủ | SamSum | <b>{product.title}</b>
             </p>
           </section>
           <div className="container-detail">
@@ -176,7 +176,7 @@ class DetailProduct extends Component {
                       <i className="fa fa-shopping-cart"></i>
                     </button>
                     <button className="btn btn-primary btn-rounded">
-                      Buy Now
+                      Mua ngay
                     </button>
                     <h3 className="box-title mt-5">Khuyến mãi</h3>
                     <ul className="list-unstyled">
@@ -200,15 +200,15 @@ class DetailProduct extends Component {
                       <table className="table table-striped table-product">
                         <tbody>
                           <tr>
-                            <td>Product name</td>
+                            <td>Tên sản phẩm</td>
                             <td>{product.title}</td>
                           </tr>
                           <tr>
-                            <td width="390">Brand</td>
+                            <td width="390">Thương hiệu</td>
                             <td>{product.categories}</td>
                           </tr>
                           <tr>
-                            <td>Outstanding features</td>
+                            <td>Tính năng nổi bậc</td>
                             <td>{product.desc}</td>
                           </tr>
                         </tbody>
@@ -226,7 +226,7 @@ class DetailProduct extends Component {
 
               <textarea
                 className="form-control"
-                onChange={(event) => this.handleOnchangeInput(event)}
+                onChange={event => this.handleOnchangeInput(event)}
                 value={this.state.newReview}
               ></textarea>
             </div>
@@ -242,12 +242,12 @@ class DetailProduct extends Component {
             <div className="row  d-flex justify-content-center">
               <div className="col-md-8">
                 <div className="headings d-flex justify-content-between align-items-center mb-3">
-                  <h5> {allReview.length} Comments</h5>
+                  <h5> {allReview.length} Bình luận</h5>
 
                   <div className="buttons">
                     <span className="badge bg-white d-flex flex-row align-items-center">
                       <span className="text-primary">
-                        Comments {isShowComment === true ? "ON" : "OFF"}
+                        Bình luận {isShowComment === true ? "ON" : "OFF"}
                       </span>
                       <div className="form-check form-switch">
                         <input
@@ -303,7 +303,7 @@ class DetailProduct extends Component {
                                         this.handleDeleteReview(item._id)
                                       }
                                     >
-                                      Remove
+                                      Xóa
                                     </small>
                                     <span className="dots"></span>
                                     <small
@@ -311,7 +311,7 @@ class DetailProduct extends Component {
                                         this.handleOpenModalEditReview(item)
                                       }
                                     >
-                                      Edit
+                                      Sửa
                                     </small>
                                   </div>
                                   <div className="icons align-items-center">
@@ -340,14 +340,14 @@ class DetailProduct extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     userInfor: state.user.userInfor,
     isLogin: state.user.isLogin,
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {};
 };
 

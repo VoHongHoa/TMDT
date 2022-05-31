@@ -45,7 +45,7 @@ class Products extends Component {
     }
     return arrPrice;
   };
-  getAllProductByCategory = async (category) => {
+  getAllProductByCategory = async category => {
     let res = await findProduct(category);
     if (res) {
       this.setState({
@@ -54,7 +54,7 @@ class Products extends Component {
       });
     }
   };
-  handleAddToCart = (item) => {
+  handleAddToCart = item => {
     this.props.addToCart(item);
   };
   handleOnchangeSelect = (event, id) => {
@@ -81,7 +81,7 @@ class Products extends Component {
       });
     }
   };
-  handleViewDetailProduct = (product) => {
+  handleViewDetailProduct = product => {
     this.props.history.push(`/detail-product/${product._id}`);
   };
   render() {
@@ -93,7 +93,7 @@ class Products extends Component {
         </section>
         <section id="sidebar">
           <p>
-            Home | <b>{this.props.match.params.category}</b>
+            Trang chủ | <b>{this.props.match.params.category}</b>
           </p>
         </section>
         <div className="filter-container mb-2 mt-2">
@@ -102,7 +102,7 @@ class Products extends Component {
               <div className="title-select">Giá: </div>
               <select
                 className="select-price"
-                onChange={(event) =>
+                onChange={event =>
                   this.handleOnchangeSelect(event, "selectedPrice")
                 }
               >
@@ -176,14 +176,15 @@ class Products extends Component {
                             <i className="fa fa-star star"></i>
                           </div>
 
-                          <div className="text-muted mb-3">34 reviews</div>
+                          <div className="text-muted mb-3">34 đánh giá</div>
 
                           <button
                             type="button"
                             className="btn bg-cart"
                             onClick={() => this.handleAddToCart(item)}
                           >
-                            <i className="fa fa-cart-plus mr-2"></i> Add to cart
+                            <i className="fa fa-cart-plus mr-2"></i> Thêm vào
+                            giỏ
                           </button>
                         </div>
                       </div>
@@ -202,13 +203,13 @@ class Products extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {};
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    addToCart: (item) => dispatch(addToCart(item)),
+    addToCart: item => dispatch(addToCart(item)),
   };
 };
 

@@ -16,7 +16,7 @@ class Login extends Component {
   handleReturnLogin = () => {
     this.props.history.push("/login");
   };
-  handleOnchangeInput = (event) => {
+  handleOnchangeInput = event => {
     this.setState({
       email: event.target.value,
     });
@@ -40,8 +40,8 @@ class Login extends Component {
           </div>
           <div className="content">
             <h4>
-              Cung cấp Email của bạn và chúng tôi sẽ tiền hành cập nhập lại
-              password
+              Cung cấp Email của bạn và chúng tôi sẽ tiền hành cập nhập lại mật
+              khẩu
             </h4>
             <div className="email-container">
               <label>Email</label>
@@ -49,7 +49,7 @@ class Login extends Component {
                 type="text"
                 className="form-control"
                 placeholder="Nhập email mà bạn đã đăng kí tài khoản"
-                onChange={(event) => this.handleOnchangeInput(event)}
+                onChange={event => this.handleOnchangeInput(event)}
               />
             </div>
             <div className="btn-submit">
@@ -77,13 +77,13 @@ class Login extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     isLogin: state.user.isLogin,
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {};
 };
 
