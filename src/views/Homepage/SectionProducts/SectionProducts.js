@@ -20,10 +20,10 @@ class SectionProducts extends Component {
       });
     }
   }
-  handleViewDetailProduct = product => {
+  handleViewDetailProduct = (product) => {
     this.props.history.push(`/detail-product/${product._id}`);
   };
-  handleAddToCart = item => {
+  handleAddToCart = (item) => {
     this.props.addToCart(item);
   };
 
@@ -41,14 +41,17 @@ class SectionProducts extends Component {
                 topProduct.map((item, index) => {
                   return (
                     <div className="col-md-4 mt-2" key={index}>
-                      <div className="card">
+                      <div className="card" style={{ height: "700px" }}>
                         <div className="card-body">
-                          <div className="card-img-actions">
+                          <div
+                            className="card-img-actions"
+                            style={{ height: "350px" }}
+                          >
                             <img
                               src={item.img}
                               className="card-img img-fluid"
-                              width="96"
-                              height="350"
+                              width="96px"
+                              height="350px"
                               alt={item.title}
                               onClick={() => this.handleViewDetailProduct(item)}
                               style={{ cursor: "pointer" }}
@@ -106,12 +109,12 @@ class SectionProducts extends Component {
     );
   }
 }
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {};
 };
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    addToCart: item => dispatch(addToCart(item)),
+    addToCart: (item) => dispatch(addToCart(item)),
   };
 };
 

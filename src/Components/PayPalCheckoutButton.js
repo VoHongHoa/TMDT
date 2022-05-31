@@ -11,6 +11,9 @@ class PayPalCheckoutButton extends Component {
     }
   };
   render() {
+    let { total } = this.props;
+    total = Math.floor(total / 23500);
+    console.log(total);
     return (
       <PayPalButtons
         className="btn btn-primary col-12 mt-3"
@@ -25,7 +28,7 @@ class PayPalCheckoutButton extends Component {
               {
                 description: "Mua sản phẩm tại uitstore",
                 amount: {
-                  value: this.props.total,
+                  value: total,
                 },
               },
             ],
