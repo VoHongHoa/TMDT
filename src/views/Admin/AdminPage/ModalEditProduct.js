@@ -2,15 +2,9 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import Select from "react-select";
-import CommonUtils from "../../../utils/CommonUtils";
 import { storage } from "../../../firebase";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
-import {
-  optionsColor,
-  optionsRam,
-  optionsRom,
-  optionsCategories,
-} from "../../../utils/constants";
+import { optionsCategories } from "../../../utils/constants";
 import "./ModalEditProduct.scss";
 class ModalEditProduct extends Component {
   constructor(props) {
@@ -20,10 +14,7 @@ class ModalEditProduct extends Component {
       desc: "",
       img: "",
       categories: "",
-      color: "",
       price: "",
-      ram: "",
-      rom: "",
     };
   }
   componentDidMount() {}
@@ -38,19 +29,7 @@ class ModalEditProduct extends Component {
           value: this.props.currentProduct.categories,
           label: this.props.currentProduct.categories,
         },
-        color: {
-          value: this.props.currentProduct.color,
-          label: this.props.currentProduct.color,
-        },
         price: this.props.currentProduct.price,
-        ram: {
-          value: this.props.currentProduct.ram,
-          label: this.props.currentProduct.ram,
-        },
-        rom: {
-          value: this.props.currentProduct.rom,
-          label: this.props.currentProduct.rom,
-        },
       });
     }
   }
@@ -72,7 +51,7 @@ class ModalEditProduct extends Component {
       ...copyState,
     });
   };
-  handleOnchangeImage = async event => {
+  handleOnchangeImage = async (event) => {
     let filedata = event.target.files;
     let file = filedata[0];
     //console.log(file);
@@ -81,12 +60,12 @@ class ModalEditProduct extends Component {
       const uploadTask = uploadBytesResumable(storageRef, file);
       uploadTask.on(
         "state_changed",
-        snapshot => {},
-        err => {
+        (snapshot) => {},
+        (err) => {
           console.log(err);
         },
         () => {
-          getDownloadURL(uploadTask.snapshot.ref).then(url => {
+          getDownloadURL(uploadTask.snapshot.ref).then((url) => {
             console.log("check url", url);
             this.setState({
               img: url,
@@ -103,10 +82,7 @@ class ModalEditProduct extends Component {
       desc: this.state.desc,
       img: this.state.img,
       categories: this.state.categories.value,
-      color: this.state.color.value,
       price: this.state.price,
-      ram: this.state.ram.value,
-      rom: this.state.rom.value,
     });
   };
 
@@ -135,7 +111,7 @@ class ModalEditProduct extends Component {
                 type="text"
                 className="form-control"
                 placeholder="Enter product name"
-                onChange={event => {
+                onChange={(event) => {
                   this.handleOnchangeInput(event, "tittle");
                 }}
                 value={this.state.tittle}
@@ -147,7 +123,7 @@ class ModalEditProduct extends Component {
                 type="text"
                 className="form-control"
                 placeholder="Enter product descriptions"
-                onChange={event => {
+                onChange={(event) => {
                   this.handleOnchangeInput(event, "desc");
                 }}
                 value={this.state.desc}
@@ -164,39 +140,12 @@ class ModalEditProduct extends Component {
               />
             </div>
             <div className="form-group mt-2 col-6">
-              <label>Màu</label>
-              <Select
-                options={optionsColor}
-                value={this.state.color}
-                onChange={this.handleOnchangeSelect}
-                name={"color"}
-              />
-            </div>
-            <div className="form-group mt-2 col-6">
-              <label>Ram</label>
-              <Select
-                options={optionsRam}
-                value={this.state.ram}
-                onChange={this.handleOnchangeSelect}
-                name={"ram"}
-              />
-            </div>
-            <div className="form-group mt-2 col-6">
-              <label>Rom</label>
-              <Select
-                options={optionsRom}
-                value={this.state.rom}
-                onChange={this.handleOnchangeSelect}
-                name={"rom"}
-              />
-            </div>
-            <div className="form-group mt-2 col-6">
               <label>Giá</label>
               <input
                 type="text"
                 className="form-control"
                 placeholder="Enter product price"
-                onChange={event => {
+                onChange={(event) => {
                   this.handleOnchangeInput(event, "price");
                 }}
                 value={this.state.price}
@@ -207,7 +156,7 @@ class ModalEditProduct extends Component {
               <input
                 type="file"
                 className="form-control "
-                onChange={event => {
+                onChange={(event) => {
                   this.handleOnchangeImage(event);
                 }}
               />
@@ -250,11 +199,11 @@ class ModalEditProduct extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {};
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {};
 };
 
