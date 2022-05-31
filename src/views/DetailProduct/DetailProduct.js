@@ -152,7 +152,7 @@ class DetailProduct extends Component {
           </section>
           <section id="sidebar">
             <p>
-              Trang chủ | SamSum | <b>{product.title}</b>
+              Trang chủ | Sản phẩm | <b>{product.title}</b>
             </p>
           </section>
           <div className="container-detail">

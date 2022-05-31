@@ -124,6 +124,14 @@ class Homeheader extends Component {
                   >
                     Giày quá cỡ
                   </NavLink>
+                  <NavLink
+                    to="/Custom"
+                    className="dropdown-item"
+                    activeClassName="active"
+                    exact
+                  >
+                    Custom sneaker
+                  </NavLink>
                 </div>
               </div>
               {/* <a href="#" className="nav-item nav-link">

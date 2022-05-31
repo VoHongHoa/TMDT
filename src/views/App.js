@@ -19,6 +19,7 @@ import Dashboard from "./Admin/AdminPage/Dashboard";
 import Search from "./Homepage/Search/Search";
 import ModalCart from "./Homepage/Homeheader/ModalCart/ModalCart";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
+import CustomProduct from "./Products/CustomProduct";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -52,6 +53,9 @@ class App extends Component {
               </Route>
               <Route path="/detail-product/:id">
                 <DetailProduct />
+              </Route>
+              <Route path="/Custom">
+                <CustomProduct />
               </Route>
               <Route exact path="/login">
                 {isLogin ? <Redirect to="/" /> : <Login />}
@@ -131,14 +135,14 @@ class App extends Component {
     );
   }
 }
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     isLogin: state.user.isLogin,
     userInfor: state.user.userInfor,
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {};
 };
 export default connect(mapStateToProps, mapDispatchToProps)(App);
