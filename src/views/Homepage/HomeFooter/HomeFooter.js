@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import "./HomeFooter.scss";
+import "bootstrap-icons/font/bootstrap-icons.css";
 class HomeFooter extends Component {
   render() {
     return (
@@ -14,19 +15,28 @@ class HomeFooter extends Component {
             </div>
             <div className="text">
               <a
-                href="https://www.facebook.com/vohonghoaa1"
+                href="https://www.facebook.com/uitsneaker"
                 className="me-4 text-reset"
               >
                 <i className="fab fa-facebook-f"></i>
               </a>
-              <a href="https://www.google.com/" className="me-4 text-reset">
-                <i className="fab fa-google"></i>
-              </a>
               <a
-                href="https://github.com/VoHongHoa/Front_ReactJs_Nhom11.git"
+                href="https://www.instagram.com/uitsneaker/"
                 className="me-4 text-reset"
               >
-                <i className="fab fa-github"></i>
+                <i className="bi bi-instagram"></i>
+              </a>
+              <a
+                href="https://shopee.vn/uitsneaker"
+                className="me-4 text-reset"
+              >
+                <i className="bi bi-bag"></i>
+              </a>
+              <a
+                href="https://www.youtube.com/channel/UCRE6LyOJDt-732qeVHD9yUw"
+                className="me-4 text-reset"
+              >
+                <i className="bi bi-youtube"></i>
               </a>
             </div>
           </section>
@@ -48,23 +58,45 @@ class HomeFooter extends Component {
                     Hệ thống cửa hàng
                   </h6>
                   <p>
-                    <a href="https://www.mongodb.com/" className="text-reset">
-                      Đà Nẵng
-                    </a>
-                  </p>
-                  <p>
-                    <a href="https://expressjs.com/" className="text-reset">
+                    <a href="#" className="text-reset">
                       Hồ Chí Minh
                     </a>
                   </p>
                   <p>
-                    <a href="https://reactjs.org/" className="text-reset">
-                      Hà Nội
+                    <a
+                      href="https://www.facebook.com/uitsneaker"
+                      className="text-reset"
+                    >
+                      Facebook
                     </a>
                   </p>
                   <p>
-                    <a href="https://nodejs.org/en/" className="text-reset">
-                      Cần Thơ
+                    <a
+                      href="https://www.instagram.com/uitsneaker/"
+                      className="text-reset"
+                    >
+                      Instagram
+                    </a>
+                  </p>
+                  <p>
+                    <a
+                      href="https://shopee.vn/uitsneaker"
+                      className="text-reset"
+                    >
+                      Shopee
+                    </a>
+                  </p>
+                  <p>
+                    <a href="https://uitsneaker.com/" className="text-reset">
+                      Website Blog
+                    </a>
+                  </p>
+                  <p>
+                    <a
+                      href="https://www.youtube.com/channel/UCRE6LyOJDt-732qeVHD9yUw"
+                      className="text-reset"
+                    >
+                      Youtube
                     </a>
                   </p>
                 </div>
@@ -100,13 +132,13 @@ class HomeFooter extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     //isLoggedIn: state.user.isLoggedIn,
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {};
 };
 

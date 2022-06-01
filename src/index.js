@@ -7,6 +7,9 @@ import { Provider } from "react-redux";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { PersistGate } from "redux-persist/integration/react";
 import { store, persistor } from "./redux";
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 ReactDOM.render(
   // <React.StrictMode>
   <Provider store={store}>
