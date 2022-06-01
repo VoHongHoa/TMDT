@@ -208,7 +208,7 @@ class DetailProduct extends Component {
                             <td>{product.categories}</td>
                           </tr>
                           <tr>
-                            <td>Tính năng nổi bậc</td>
+                            <td>Đặc điểm nổi bật</td>
                             <td>{product.desc}</td>
                           </tr>
                         </tbody>

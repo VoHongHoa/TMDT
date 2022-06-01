@@ -20,10 +20,10 @@ class SectionProducts extends Component {
       });
     }
   }
-  handleViewDetailProduct = (product) => {
+  handleViewDetailProduct = product => {
     this.props.history.push(`/detail-product/${product._id}`);
   };
-  handleAddToCart = (item) => {
+  handleAddToCart = item => {
     this.props.addToCart(item);
   };
 
@@ -33,7 +33,7 @@ class SectionProducts extends Component {
     return (
       <>
         <div className="section-product-container">
-          <span className="text-product">Danh sách sản phẩm nổi bậc</span>
+          <span className="text-product">Danh sách sản phẩm nổi bật</span>
           <div className="container d-flex justify-content-center mt-50 mb-50 product-slide">
             <div className="row">
               {topProduct &&
@@ -109,12 +109,12 @@ class SectionProducts extends Component {
     );
   }
 }
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {};
 };
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    addToCart: (item) => dispatch(addToCart(item)),
+    addToCart: item => dispatch(addToCart(item)),
   };
 };
 
