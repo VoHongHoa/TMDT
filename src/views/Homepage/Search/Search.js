@@ -18,7 +18,7 @@ class Search extends Component {
   };
   render() {
     return (
-      <React.Fragment>
+      <div className="container">
         <Homeheader />
         <div className="container d-flex justify-content-center mt-50 mb-50 product-slide">
           <div className="row">
@@ -26,7 +26,7 @@ class Search extends Component {
               this.props.allProduct.map((item, index) => {
                 return (
                   <div className="col-md-4 mt-2">
-                    <div className="card" style={{ height: "700px" }}>
+                    <div className="card" style={{ height: "900px" }}>
                       <div className="card-body">
                         <div
                           className="card-img-actions"
@@ -93,7 +93,7 @@ class Search extends Component {
         </div>
 
         <HomeFooter />
-      </React.Fragment>
+      </div>
     );
   }
 }
