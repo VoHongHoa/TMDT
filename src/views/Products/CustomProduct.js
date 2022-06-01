@@ -29,6 +29,31 @@ class CustomProduct extends Component {
             <br />
             <br />
           </div>
+          <div className="detail-custom">
+            <h7>
+              Chỉ với 3 bước đơn giản, bạn sẽ có được đôi custom sneaker độc
+              nhất dành cho riêng bạn.
+              <br />
+              UITsneaker cung cấp cho bạn 2 lựa chọn custom sneaker
+              <br />
+              1. Đến trực tiếp shop để được hỗ trợ custom sneaker
+              <br />
+              2. Gửi bản thiết kế custom và UITsneaker sẽ hiện thực chúng.
+              <br />
+              ------------------------------------------------
+              <br />
+              <br />3 bước custom sneaker (Hình thức 2)
+              <br />
+              Bước 1: Chọn mẫu sneaker bạn thích trên hệ thống UITsneaker
+              <br />
+              Bước 2: Nhắn tin trực tiếp với shop, gửi kèm mẫu giày bạn chọn và
+              bản thiết kế của bạn để được tư vấn
+              <br />
+              Bước 3: UITsneaker sẽ mang đôi custom sneaker đến tận tay bạn
+            </h7>
+            <br />
+            <br />
+          </div>
           <div className="custom_picture">
             <img
               className="custom_picture"
