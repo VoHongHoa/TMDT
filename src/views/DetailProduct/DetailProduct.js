@@ -39,10 +39,10 @@ class DetailProduct extends Component {
       });
     }
   }
-  handleAddToCart = product => {
+  handleAddToCart = (product) => {
     this.props.addToCart(product);
   };
-  getAllReviews = async productId => {
+  getAllReviews = async (productId) => {
     try {
       let res = await getAllReviewProduct(productId);
       this.setState({
@@ -52,7 +52,7 @@ class DetailProduct extends Component {
       console.log(e);
     }
   };
-  handleOnchangeInput = event => {
+  handleOnchangeInput = (event) => {
     this.setState({
       newReview: event.target.value,
     });
@@ -98,7 +98,7 @@ class DetailProduct extends Component {
       isShowComment: !this.state.isShowComment,
     });
   };
-  handleDeleteReview = async reviewId => {
+  handleDeleteReview = async (reviewId) => {
     try {
       let res = await deleteReview(reviewId);
       //console.log(res);
@@ -111,7 +111,7 @@ class DetailProduct extends Component {
       toast.error("Lỗi server");
     }
   };
-  handleOpenModalEditReview = async item => {
+  handleOpenModalEditReview = async (item) => {
     this.setState({
       curentReview: item,
       isOpenModal: true,
@@ -122,7 +122,7 @@ class DetailProduct extends Component {
       isOpenModal: false,
     });
   };
-  doEditReview = async data => {
+  doEditReview = async (data) => {
     try {
       let res = await editReview(data);
       //console.log(res);
@@ -186,16 +186,16 @@ class DetailProduct extends Component {
                       </li>
                       <li>
                         <i className="fa fa-check text-success"></i>Giảm đến 30%
-                        Gói bảo hành Samsung Care+ chỉ còn 2.780.000đ
+                        Có chính sách 1 đổi 1 nếu sản phẩm lỗi
                       </li>
                       <li>
-                        <i className="fa fa-check text-success"></i>Tặng sim
-                        data Mobifone Hera 5G (2.5GB/ngày)
+                        <i className="fa fa-check text-success"></i>Miễn phí vận
+                        chuyển
                       </li>
                     </ul>
                   </div>
                   <div className="col-lg-12 col-md-12 col-sm-12">
-                    <h3 className="box-title mt-5">Thông tin kỹ thuật</h3>
+                    <h3 className="box-title mt-5">Thông tin</h3>
                     <div className="table-responsive">
                       <table className="table table-striped table-product">
                         <tbody>
@@ -226,7 +226,7 @@ class DetailProduct extends Component {
 
               <textarea
                 className="form-control"
-                onChange={event => this.handleOnchangeInput(event)}
+                onChange={(event) => this.handleOnchangeInput(event)}
                 value={this.state.newReview}
               ></textarea>
             </div>
@@ -340,14 +340,14 @@ class DetailProduct extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     userInfor: state.user.userInfor,
     isLogin: state.user.isLogin,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {};
 };
 
