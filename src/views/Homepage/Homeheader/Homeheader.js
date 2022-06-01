@@ -41,15 +41,15 @@ class Homeheader extends Component {
   returnToHome = () => {
     this.props.history.push("/");
   };
-  handleOpenEditUser = id => {
+  handleOpenEditUser = (id) => {
     this.props.history.push(`/user/${id}`);
   };
-  handleOnChangeInput = event => {
+  handleOnChangeInput = (event) => {
     this.setState({
       keyword: event.target.value,
     });
   };
-  getProductSearch = keyword => {
+  getProductSearch = (keyword) => {
     this.props.searchProduct(keyword);
     this.props.history.push("/search");
   };
@@ -148,7 +148,7 @@ class Homeheader extends Component {
                   id="search"
                   className="form-control"
                   placeholder="Search by Name"
-                  onChange={event => this.handleOnChangeInput(event)}
+                  onChange={(event) => this.handleOnChangeInput(event)}
                 />
                 <span className="input-group-addon">
                   <i
@@ -218,6 +218,15 @@ class Homeheader extends Component {
                       <i className="fas fa-shopping-cart"></i> Giỏ hàng
                     </NavLink>
 
+                    <NavLink
+                      to="/user-orders"
+                      className="dropdown-item"
+                      activeClassName="active"
+                      exact
+                    >
+                      <i className="fas fa-shopping-bag"></i> Đơn hàng
+                    </NavLink>
+
                     {this.props.userInfor &&
                       this.props.userInfor.user &&
                       this.props.userInfor.user.role &&
@@ -263,17 +272,17 @@ class Homeheader extends Component {
     );
   }
 }
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     isLogin: state.user.isLogin,
     userInfor: state.user.userInfor,
     numOfItemInCart: state.cart.cart.length,
   };
 };
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     logOutSuccess: () => dispatch(logOutSuccess()),
-    searchProduct: keyword => dispatch(searchProduct(keyword)),
+    searchProduct: (keyword) => dispatch(searchProduct(keyword)),
   };
 };
 

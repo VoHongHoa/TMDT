@@ -15,6 +15,7 @@ class Oder extends Component {
       fullName: "",
       address: "",
       phonenumber: "",
+      payMent: "Chưa thanh toán",
     };
   }
   componentDidMount() {
@@ -66,6 +67,7 @@ class Oder extends Component {
           products: this.props.itemInCart,
           address: this.state.address,
           amount: total,
+          payStatus: this.state.payMent,
         };
         if (this.checkInput()) {
           let res = await addNewOder(data);
@@ -82,6 +84,11 @@ class Oder extends Component {
       console.log(e);
       toast.error("Lỗi hệ thống!");
     }
+  };
+  changePayment = () => {
+    this.setState({
+      payMent: "Đã Thanh toán",
+    });
   };
   render() {
     let { fullName, address, phonenumber } = this.state;
@@ -182,6 +189,7 @@ class Oder extends Component {
               total={total}
               handleSubmit={this.handleSubmit}
               checkInput={this.checkInput}
+              changePayment={this.changePayment}
             />
           </div>
         </div>

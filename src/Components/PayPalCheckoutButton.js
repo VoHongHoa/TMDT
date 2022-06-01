@@ -35,6 +35,7 @@ class PayPalCheckoutButton extends Component {
           });
         }}
         onClick={(data, actions) => {
+          this.props.changePayment();
           const hasAlreadyBought = this.props.checkInput();
           if (hasAlreadyBought) {
             return actions.resolve();
